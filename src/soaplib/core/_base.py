@@ -240,6 +240,7 @@ def _from_soap(in_envelope_xml, xmlids=None):
     return header, body
 
 def _parse_xml_string(xml_string, charset=None):
+     xml_string = xml_string.replace('<?xml version="1.0" encoding="utf-8"?>', "")
     try:
         if charset is None: # hack
             raise ValueError(charset)
